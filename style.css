@@ -1,0 +1,15 @@
+h1 {
+  text-decoration: underline;
+}
+
+p {
+  color: #40882a;
+}
+
+.voiture {
+  width: 250px;
+  height: 108px;
+  background: red;
+  position: relative;
+  border-radius: 30px;
+}
