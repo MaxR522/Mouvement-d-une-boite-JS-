@@ -21,7 +21,10 @@ function faireBouger(direction, rotation) {
     document.querySelector('.voiture').style.transition= "all 1s ease";
   } else{
     
-    document.querySelector('.voiture').style.transform= "rotate(90deg)";
+    var voit = document.querySelector('.voiture');
+    var t = voit.style.transform.match(/(\d+)/g) || [0];  // on met ||[0) pour le 1st passage
+    var val = ( t[0] *1 +36) % 360;                      // incrémentation de 40
+    voit.style.transform = 'rotate(' +val +'deg)';
     document.querySelector('.voiture').style.transition= "all 1s ease";
   } 
 }
@@ -32,6 +35,8 @@ function faireHaut(dir, norm){
   if (dir){
   document.querySelector('.voiture').style.transition= "all 1s ease";
   } else{
-    document.querySelector('.voiture').style.transform= "rotate(180deg)";
-  }
+  var voit = document.querySelector('.voiture');
+  var t = voit.style.transform.match(/(\d+)/g) || [0];  // on met ||[0) pour le 1st passage
+  var val = ( t[0] *1 +(360 -36)) % 360;                      // incrémentation de 40
+  voit.style.transform = 'rotate(' +val +'deg)';  }
 }
